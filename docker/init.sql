@@ -1,0 +1,2 @@
+CREATE DATABASE wines_app;
+GRANT ALL PRIVILEGES ON DATABASE wines_app TO postgres;
