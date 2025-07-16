@@ -6,7 +6,7 @@ export default class Wine extends BaseModel {
   declare id: number
 
   @column()
-  public name!: string
+  public nome!: string
 
   @column()
   public tipo?: string

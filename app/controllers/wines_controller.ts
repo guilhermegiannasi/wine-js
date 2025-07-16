@@ -7,7 +7,7 @@ export default class WinesController {
   }
 
   async store({ request }: HttpContext) {
-    const data = request.only(['name', 'tipo', 'pais', 'ano', 'descricao', 'favorito'])
+    const data = request.only(['nome', 'tipo', 'pais', 'ano', 'descricao', 'favorito'])
     const wine = await Wine.create(data)
     return wine
   }
@@ -18,7 +18,7 @@ export default class WinesController {
 
   async update({ params, request }: HttpContext) {
     const wine = await Wine.findOrFail(params.id)
-    const data = request.only(['name', 'tipo', 'pais', 'ano', 'descricao', 'favorito'])
+    const data = request.only(['nome', 'tipo', 'pais', 'ano', 'descricao', 'favorito'])
     wine.merge(data)
     await wine.save()
     return wine
